@@ -20,4 +20,5 @@ namespace ClassAndInstance1
             myform.ShowDialog();
        }
     }
+
 }
