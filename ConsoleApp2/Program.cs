@@ -7,12 +7,19 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            int sum = calulate(1, 2);
-            Console.WriteLine(sum);
-            Animal cat = new Animal();
-            cat.eat();
-            cat.fly();
+
+            Console.WriteLine("请输入你的数字：");
+            int a = int.Parse(Console.ReadLine());
      
+            Console.WriteLine("你的数字是:" + a);
+          
+            
+            
+            int sum = calulate(1, 2);
+            //Console.WriteLine(sum);
+            Animal cat = new Animal();
+            //cat.eat();
+            //cat.fly();
         }
 
         static int calulate(int a, int b)
