@@ -2,11 +2,11 @@
 
 namespace ConsoleApp1
 {
-    class Program
+    class project
     {
-        static void Main(string[] args)
+        static void Main(String[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("hello world");
         }
     }
 }
