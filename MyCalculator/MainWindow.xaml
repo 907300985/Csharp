@@ -1,0 +1,23 @@
+﻿<Window x:Class="MyCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCalculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="Calculator">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF5DC7F5"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="add1" Content="add" HorizontalAlignment="Left" Margin="120,350,0,0" VerticalAlignment="Top" Width="62" Click="add1_Click"/>
+        <TextBox x:Name="tb1" HorizontalAlignment="Center" Margin="0,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="560" Height="72" FontSize="30"/>
+        <TextBox x:Name="tb2" HorizontalAlignment="Center" Margin="0,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="560" Height="72" FontSize="30"/>
+        <Button x:Name="sub1" Content="sub" HorizontalAlignment="Left" Margin="243,350,0,0" VerticalAlignment="Top" Width="66" Click="Button_Click"/>
+        <TextBox x:Name="tb3" HorizontalAlignment="Left" Margin="400,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Height="72" FontSize="30"/>
+
+    </Grid>
+</Window>
