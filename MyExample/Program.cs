@@ -16,6 +16,7 @@ namespace MyExample
             Console.WriteLine(result);
             Console.WriteLine(result2);
             Calculation.Hnoi(3, "A", "B", "C");
+            Console.WriteLine(Calculation.fabo(0));       
             Form form = new Form();
             form.ShowDialog();
         }
@@ -58,5 +59,17 @@ namespace MyExample
                 Hnoi(s - 1, mid, from, to);
             }
         }
+        public static int fabo(int n)
+        {
+            if (n==1||n==2)
+            {
+                return 1;
+            }
+            else if(n>2)
+            {
+                return fabo(n - 1) + fabo(n - 2);
+            }
+            return -1;
+        } 
     }
 }
