@@ -24,17 +24,24 @@ namespace TestReflection
              依赖反转:概念,创建接口形成倒关系*/
 
             var sc = new ServiceCollection();
-            sc.AddScoped(typeof(ITank), typeof(HeavyTank));
+            //sc.AddScoped(typeof(ITank), typeof(HeavyTank));
             sc.AddScoped(typeof(IVehicle), typeof(LightTank));
+            
             sc.AddScoped<Driver>();
              var sp = sc.BuildServiceProvider();
             //=====================================
-            ITank tank = sp.GetService<ITank>();
-            tank.Fire();
-            tank.Run();
+            IVehicle v = sp.GetService<IVehicle>();
+            v.Run();
             //==========================================
-            var driver = sp.GetService<Driver>();
-            driver.Drive();
+            try
+            {
+                var driver = sp.GetService<Driver>();
+                driver.Drive();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             
         }
     }
