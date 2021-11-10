@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TestReflection
 {
@@ -7,25 +8,48 @@ namespace TestReflection
     {
         static void Main(string[] args)
         {
-            ITank tank = new HeavyTank();
+            //ITank tank = new HeavyTank();
             //================分割线=================
-            var t = tank.GetType();
-            object o = Activator.CreateInstance(t);
-            MethodInfo fireMi = t.GetMethod("Fire");
-            MethodInfo runMi = t.GetMethod("Run");
+            /*            直接使用反射
+             *          var t = tank.GetType();
+                        object o = Activator.CreateInstance(t);
+                        MethodInfo fireMi = t.GetMethod("Fire");
+                        MethodInfo runMi = t.GetMethod("Run");
 
-            fireMi.Invoke(o, null);
-            runMi.Invoke(o, null);
+                        fireMi.Invoke(o, null);
+                        runMi.Invoke(o, null);*/
+
+            /*
+             DI依赖注入
+             依赖反转:概念,创建接口形成倒关系*/
+
+            var sc = new ServiceCollection();
+            sc.AddScoped(typeof(ITank), typeof(HeavyTank));
+            sc.AddScoped(typeof(IVehicle), typeof(LightTank));
+            sc.AddScoped<Driver>();
+             var sp = sc.BuildServiceProvider();
+            //=====================================
+            ITank tank = sp.GetService<ITank>();
+            tank.Fire();
+            tank.Run();
+            //==========================================
+            var driver = sp.GetService<Driver>();
+            driver.Drive();
+            
         }
     }
 
     class Driver
     {
-        //private ITank heavyTank;
+        private IVehicle _vehicle;
 
         public Driver(IVehicle vehicle)
         {
-            vehicle.Run();
+            _vehicle = vehicle;
+        }
+        public void Drive()
+        {
+            _vehicle.Run();
         }
     }
 
