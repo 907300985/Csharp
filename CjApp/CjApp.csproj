@@ -4,16 +4,21 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>database.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="cj.png" />
+    <None Remove="cj2.gif" />
     <None Remove="click.jpg" />
+    <None Remove="panda.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="cj.png" />
+    <Resource Include="cj2.gif" />
     <Resource Include="click.jpg" />
+    <Resource Include="panda.png" />
   </ItemGroup>
 
 </Project>
