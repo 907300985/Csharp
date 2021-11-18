@@ -34,7 +34,7 @@
                 <DropShadowEffect/>
             </TextBlock.Effect><Run Language="zh-cn" Text="一郎的烧饼"/></TextBlock>
         <Label x:Name="ward3_Copy" Content="三等奖" HorizontalAlignment="Left" Margin="83,401,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="bt1" Content="" HorizontalAlignment="Center" Margin="0,453,0,0" VerticalAlignment="Top" Height="108" Width="112" Click="bt1_Click" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="bt1" Content="" HorizontalAlignment="Center" Margin="0,453,0,0" VerticalAlignment="Top" Height="104" Width="118" Click="bt1_Click" RenderTransformOrigin="0.5,0.5">
             <Button.Background>
                 <ImageBrush ImageSource="/cj2.gif">
                     <ImageBrush.RelativeTransform>
